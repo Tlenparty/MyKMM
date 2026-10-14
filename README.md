@@ -1,28 +1,28 @@
 # MyKMM
 
-Стартовый проект на Kotlin Multiplatform Mobile: общий модуль `shared` с логикой
-приветствия и два нативных клиента — Android (Jetpack Compose) и iOS (SwiftUI).
-Приложение показывает строку «Hello, <платформа и версия ОС>!», полученную из общего кода
-через `expect`/`actual`.
+A Kotlin Multiplatform Mobile starter project: a shared `shared` module with the
+greeting logic and two native clients, Android (Jetpack Compose) and iOS (SwiftUI).
+The app displays a "Hello, <platform and OS version>!" string obtained from the shared
+code via `expect`/`actual`.
 
-## Стек
+## Tech stack
 
-| Область     | Технологии                                       |
+| Area        | Technologies                                     |
 |-------------|--------------------------------------------------|
-| Язык        | Kotlin 2.0, Swift                                |
-| Общий код   | Kotlin Multiplatform (Android, iOS)              |
+| Language    | Kotlin 2.0, Swift                                |
+| Shared code | Kotlin Multiplatform (Android, iOS)              |
 | UI          | Jetpack Compose + Material 3, SwiftUI            |
-| Интеграция  | CocoaPods (модуль `shared` как pod)              |
+| Integration | CocoaPods (`shared` module as a pod)             |
 
-## Структура
+## Project structure
 
 ```
-shared/      # общий код: Greeting, Platform (expect/actual)
-androidApp/  # Android-приложение на Compose
-iosApp/      # iOS-приложение на SwiftUI (Xcode + CocoaPods)
+shared/      # shared code: Greeting, Platform (expect/actual)
+androidApp/  # Android app built with Compose
+iosApp/      # iOS app built with SwiftUI (Xcode + CocoaPods)
 ```
 
-## Сборка
+## Build
 
 Android (JDK 17, Android SDK 35):
 
@@ -30,4 +30,4 @@ Android (JDK 17, Android SDK 35):
 ./gradlew :androidApp:assembleDebug
 ```
 
-iOS: выполнить `pod install` в `iosApp/`, затем открыть `iosApp/iosApp.xcworkspace` в Xcode.
+iOS: run `pod install` in `iosApp/`, then open `iosApp/iosApp.xcworkspace` in Xcode.
